@@ -1,0 +1,16 @@
+onChange={(e)=>setSpecialte(e.target.value)}
+                        required
+                        onFocus={()=>setSpecialiteFocus(true)}
+                        onBlur={()=>setSpecialiteFocus(false)}
+
+
+onChange={(e)=>setMatricule(e.target.value)}
+                        required
+                        onFocus={()=>setMatriculeFocus(true)}
+                        onBlur={()=>setMatriculeFocus(false)}
+
+
+onChange={(e)=>setGrade(e.target.value)}
+                        required
+                        onFocus={()=>setGradeFocus(true)}
+                        onBlur={()=>setGradeFocus(false)}
