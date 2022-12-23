@@ -23,13 +23,14 @@ import ListerEtudiant from "./professeur/ListerEtudiant";
 import DetailEtudiant from "./cohorte/DetailEtudiant";
 import Licence1 from "./cohorte/Licence1";
 import Etudiant from "./Etudiant/Etudiant";
+import Navigationmain from "./Navigation/Navigationmain";
 
 function App() {
   return (
     <div className="h-screen">
       <main>
         <Routes>
-          <Route path="/" element={<Login/>} />
+          <Route path="/loginpage" element={<Login/>} />
           <Route path="/ajouterole" element={<Role/>} />
           <Route path="/espaceadmin" element={<Navigation/>} />
           <Route path="/ajouteprofesseur" element={<Professeur/>} />
@@ -40,10 +41,10 @@ function App() {
           <Route path="/parametreAdmin" element={<ParametreAdmin />} />
           <Route path="/ajouterdepartement" element={<Departement />} />
           <Route path="/ajouteretudiant" element={<EtudiantRegistration />} />
-          <Route path="navigationetudiant" element={<NavigationEtudiant />} />
+          <Route path="/navigationetudiant" element={<NavigationEtudiant />} />
           <Route path="/ajouterscolarite" element={<Scolarite/>} />
           <Route path="/test" element={<Test/>} />
-          <Route path="/loginpage" element={<LoginPage />} />
+          <Route path="/" element={<LoginPage />} />
           <Route path="/listedesprofs" element={<ProfesseurLists />} />
           <Route path="/prof/:id" element={<DetailProfesseur />} />
           <Route path="/addmatiere" element={<Matiere />} />
@@ -53,6 +54,7 @@ function App() {
           <Route path="/licence1" element={<Licence1 />} />
           <Route path="/licence1/cohorte/:id" element={<DetailEtudiant />} />
           <Route path="/etudiant" element={<Etudiant />} />
+          <Route path="/mainnavigation" element={<Navigationmain /> } />
         </Routes>
       </main>
     </div>

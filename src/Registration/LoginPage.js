@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react'
 import useAuth from '../hooks/useAuth';
-import { Link, Navigate, useLocation } from 'react-router-dom'
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom'
 import axios from '../api/axios';
 import AuthContext from '../context/AuthProvider';
 import univ from '../static/ucad.jpg'
@@ -16,6 +16,8 @@ const LoginPage = () => {
   const [password, setPassword] = useState('')
   const [errMsg, setErrMsg] = useState('');
   const [success, setSuccess] = useState(false)
+
+  const navigation = useNavigate()
 
   const location = useLocation();
 
@@ -43,6 +45,7 @@ const LoginPage = () => {
   console.log(response)
   setUserName('')
   setPassword('');
+  navigation("/mainnavigation")
 
     const accessToken = response.data.accessToken
 
@@ -58,6 +61,8 @@ const LoginPage = () => {
   })
   const auth = setAuth();
    console.log(auth.username)
+
+   
 
     } catch (error) {
       console.log(error)

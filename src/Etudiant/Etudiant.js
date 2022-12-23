@@ -71,17 +71,14 @@ const Etudiant = () => {
                         <td className="border border-slate-300 p-2">{etudiant.nom} {etudiant?.prenom}</td>
                         {
                             etudiant?.note?.map((not)=>(
-                              <div className='flex flex-row'>
-                                <div className='flex flex-col'>
+                              <>
                                     <td className="border border-slate-300 p-2">{ not?.noteControle}</td>
-                                </div>
-                                <div className='flex flex-col'>
+                               
                                     <td className="border border-slate-300 p-2">{not.noteExamen}</td>
-                                </div>
-                                </div >
+                                    </>
                                     
                                 
-                                
+                            
                             ))
                         }
                         {

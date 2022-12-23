@@ -1,10 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import axios from '../api/axios';
 import univ from '../static/university.jpg';
 import NavigationChefDepart from './NavigationChefDepart';
 
 const AffectationProf = () => {
-  const handleSubmit=(e)=>{}
+  const [user, setUser] = useState('');
+
+  const [idMatiere, setIdMatiere] = useState(0)
+
+
+  const handleSubmit=async(e)=>{
+    e.preventDefault();
+
+    try {
+        const response = await axios.post("/addmatieretoprof",JSON.stringify({
+            user,
+            idMatiere
+        }),
+        {
+            headers:{'Content-Type':'application/json'},
+        }
+        );
+        if (response) {
+        setUser("")
+        setIdMatiere("");
+        console.log(user,idMatiere)
+        }
+    } catch (error) {
+        console.log(error.data)
+    }
+  }
   return (
     <div className='grid grid-cols-5 gap-1 '>
       <div>
@@ -27,7 +53,10 @@ const AffectationProf = () => {
                     </label>
                     <input className="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" 
                     id="grid-first-name" type="text" placeholder="Jane"
-                    
+                    onChange={(e)=>{
+                      setUser(e.target.value)
+                      console.log(e.target.value) 
+                    }}
                     required/>
                 </div>
 
@@ -37,7 +66,10 @@ const AffectationProf = () => {
                     </label>
                     <input className="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" 
                     id="grid-first-name" type="text" placeholder="Jane"
-                   
+                    onChange={(e)=>{
+                      setIdMatiere(e.target.value)
+                      console.log(e.target.value)
+                    }}
                     required/>
                 </div>   
             </div>
