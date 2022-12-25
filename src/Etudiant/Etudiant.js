@@ -75,17 +75,11 @@ const Etudiant = () => {
                                     <td className="border border-slate-300 p-2">{ not?.noteControle}</td>
                                
                                     <td className="border border-slate-300 p-2">{not.noteExamen}</td>
+                                    <td className="border border-slate-300 p-2">{not?.matiere?.nom}</td>
                                     </>
                                     
                                 
                             
-                            ))
-                        }
-                        {
-                            etudiant?.absences?.map((absen)=>(
-                                
-                                <td className="border border-slate-300 p-2">{absen?.matiere?.nom}</td>
-                                
                             ))
                         }
                     </tr>
